@@ -16,11 +16,24 @@ function urlBuilder(target) {
 }
 
 function doStuff(data) {
-  if (false) {
+  console.log(data);
+  if (Date(conf.KILL_DATE).getTime() > Date(data.next_slot).getTime()) {
+    // send email
     conf.MAILS.forEach((mail) => {
       mailler.send(mail, options);
     });
+
+    // log next slot recieved
+    logger.log(toDay(), {
+      next_slot: data.next_slot,
+      is_before_kill_date: true,
+    });
   } else {
+    logger.log(toDay(), {
+      next_slot: data.next_slot,
+      // just fuck me if it will be always equal to false
+      is_before_kill_date: false,
+    });
   }
 }
 
