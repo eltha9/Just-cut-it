@@ -17,10 +17,10 @@ function urlBuilder(target) {
 
 function doStuff(data) {
   console.log(data);
-  if (Date(conf.KILL_DATE).getTime() > Date(data.next_slot).getTime()) {
+  if (new Date(conf.KILL_DATE).getTime() > new Date(data.next_slot).getTime()) {
     // send email
     conf.MAILS.forEach((mail) => {
-      mailler.send(mail, options);
+      mailler.send(mail, { text: "test" });
     });
 
     // log next slot recieved
@@ -33,6 +33,10 @@ function doStuff(data) {
       next_slot: data.next_slot,
       // just fuck me if it will be always equal to false
       is_before_kill_date: false,
+    });
+
+    conf.MAILS.forEach((mail) => {
+      mailler.send(mail, { text: "test" });
     });
   }
 }

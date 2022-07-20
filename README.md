@@ -15,7 +15,7 @@ Because I want to cut it as soon as possible
     agenda_ids: 1, // agenda id  : integer
     insurance_sector: "public", // insurance type (yes it's important ) : string
     practice_ids: 1, // practitioner id : integer
-    limit: 4, // limit ... yes there is a limit I don't hav yes tested it : integer
+    limit: 4, // limit ... yes there is a limit I didn't tested it yet : integer
   },
   KILL_DATE: "YYYY-MM-DD", // your current appointment date : String with the format YYYY-MM-DD
 }
