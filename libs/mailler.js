@@ -4,7 +4,7 @@ const MAILLER_CONFIG = {
   from: "",
   host: "",
   fromName: "",
-  port: ,
+  port: 1,
   secure: false,
   mailSubject: "",
 };

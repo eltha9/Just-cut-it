@@ -19,9 +19,9 @@ function doStuff(data) {
   console.log(data);
   if (new Date(conf.KILL_DATE).getTime() > new Date(data.next_slot).getTime()) {
     // send email
-    conf.MAILS.forEach((mail) => {
-      mailler.send(mail, { text: "test" });
-    });
+    // conf.MAILS.forEach((mail) => {
+    //   mailler.send(mail, { text: "test" });
+    // });
 
     // log next slot recieved
     logger.log(toDay(), {
@@ -33,10 +33,6 @@ function doStuff(data) {
       next_slot: data.next_slot,
       // just fuck me if it will be always equal to false
       is_before_kill_date: false,
-    });
-
-    conf.MAILS.forEach((mail) => {
-      mailler.send(mail, { text: "test" });
     });
   }
 }
